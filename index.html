@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" async></script>
+  <title>Library</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Library</h1>
+  </div>
+
+  <!-- Library Section -->
+  <div class="book-cards">
+    <button type="button" id="addBook" >+ Add a new Book</button>
+    <!-- Template for book card-->
+    <div class="book-card">
+      <h2 id="bookTitle">Title</h2>
+      <p id="bookAuthor">Author</p>
+      <p id="bookPages">Pages</p>
+      <p id="bookRead">Read</p>
+      <button type="button">Toggle Read Status</button>
+      <button type="button">Remove Book</button>
+    </div>
+  </div>
+
+  <!--Input form for new Books-->
+  <div class="book-form" id="bookForm">
+    <label for="inputBookTitle">Title</label>
+    <input id="inputBookTitle" name="inputBookTitle">
+
+    <label for="inputBookAuthor">Author</label>
+    <input id="inputBookAuthor" name="inputBookAuthor">
+
+    <label for="inputBookPages">Pages</label>
+    <input id="inputBookPages" name="inputBookPages">
+
+    <label for="inputBookRead">Read</label>
+    <input id="inputBookRead" name="inputBookRead">
+
+    <button type="submit" id="createBook">Add Book</button>
+  </div>
+  
+</body>
+</html>
