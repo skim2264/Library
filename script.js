@@ -41,7 +41,7 @@ class Book {
 
 /* Make book form visible */
 function toggleNewBookForm() {
-  document.getElementById("bookForm").style.display = "block";
+  document.getElementById("bookForm").style.display = "flex";
   
 }
 

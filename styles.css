@@ -1,7 +1,28 @@
-#bookForm {
-  display: none;
-}
+
 
 .book-card {
   display: none;
+}
+
+#bookForm {
+  display: none;
+  flex-direction: column;
+  width: 30vw;
+  margin: 30px 30vw auto 30vw;
+  border: 2px solid black;
+  padding: 30px;
+}
+
+#bookForm input {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#bookForm input[type="checkbox"] {
+  width: auto;
+}
+
+#bookForm button {
+  width: 100%;
 }

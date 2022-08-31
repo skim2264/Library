@@ -31,19 +31,22 @@
 
   <!--Input form for new Books-->
   <div class="book-form" id="bookForm">
-    <label for="inputBookTitle">Title</label>
-    <input id="inputBookTitle" name="inputBookTitle">
+    <form action="" class="form">
+      <label for="inputBookTitle">Title</label>
+      <input type="text" id="inputBookTitle" name="inputBookTitle">
 
-    <label for="inputBookAuthor">Author</label>
-    <input id="inputBookAuthor" name="inputBookAuthor">
+      <label for="inputBookAuthor">Author</label>
+      <input type="text" id="inputBookAuthor" name="inputBookAuthor">
 
-    <label for="inputBookPages">Pages</label>
-    <input id="inputBookPages" name="inputBookPages">
+      <label for="inputBookPages">Pages</label>
+      <input type="number" id="inputBookPages" name="inputBookPages">
 
-    <label for="inputBookRead">Read</label>
-    <input id="inputBookRead" name="inputBookRead">
+      <label for="inputBookRead">Read</label>
+      <input type="checkbox" id="inputBookRead" name="inputBookRead" value="Read">
 
-    <button type="submit" id="createBook">Add Book</button>
+      <button type="submit" id="createBook">Add Book</button>
+    </form>
+    
   </div>
   
 </body>
