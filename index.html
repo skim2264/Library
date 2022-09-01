@@ -9,25 +9,42 @@
   <title>Library</title>
 </head>
 <body>
-
-  <!-- Header Section -->
-  <div class="header">
-    <h1>Library</h1>
-  </div>
-
-  <!-- Library Section -->
-  <div class="book-cards">
-    <button type="button" id="addBook" >+ Add a new Book</button>
-    <!-- Template for book card-->
-    <div class="book-card">
-      <h2 id="bookTitle">Title</h2>
-      <p id="bookAuthor">Author</p>
-      <p id="bookPages">Pages</p>
-      <p id="bookRead">Read</p>
-      <button type="button">Toggle Read Status</button>
-      <button type="button">Remove Book</button>
+  <div class="grid-container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Library</h1>
     </div>
+
+    <!-- Library Section -->
+    <div class="book-cards">
+      <div class="book-card-template">
+        <div class="icon-btns">
+          <button class="icon-btn" id="binImg"><img src="images/bin.svg"></button>
+          <button class="icon-btn" id="readImg"><img src="images/read.svg"></button>
+        </div>
+        
+        <h2 id="bookTitle">Harry Potter</h2>
+        <p id="bookAuthor">by J.K. Rowling</p>
+        <p id="bookPages">567 Pages</p>
+        <p id="bookRead">Read</p>
+      </div>
+    </div>
+
+    <div class="addBookBtn">
+      <button type="button" id="addBook" >+ Add a new Book</button>
+    </div>
+    
   </div>
+
+<!-- Template for book card
+  <div class="book-card-template">
+    <h2 id="bookTitle">Title</h2>
+    <p id="bookAuthor">Author</p>
+    <p id="bookPages">Pages</p>
+    <p id="bookRead">Read</p>
+    <button type="button">Toggle Read Status</button>
+    <button type="button">Remove Book</button>
+  </div> -->
 
   <!--Input form for new Books-->
   <div class="book-form" id="bookForm">

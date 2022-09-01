@@ -1,9 +1,52 @@
-
-
-.book-card {
-  display: none;
+.grid-container {
+  display: grid;
+  grid-template-rows: 80px auto 30px;
+  row-gap: 10px;
+  place-items: center;
 }
 
+/* Formatting of library of book cards */
+.book-cards {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+}
+
+/* Formating of book cards */
+.book-card-template {
+  display: grid;
+  width: 30vw;
+  background-color: #DEB6AB;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.book-card-template p {
+  margin: 10px;
+}
+
+#bookTitle {
+  justify-self: center;
+}
+
+#bookAuthor {
+  justify-self: end;
+}
+
+#bookPages {
+  justify-self: center;
+}
+
+.icon-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-btn {
+  width: 35px;
+}
+
+/* Formatting of book form */
 #bookForm {
   display: none;
   flex-direction: column;

@@ -9,25 +9,21 @@ class Book {
     }
 
   createBookCard() {
-    /* Create Div for new Book Card and append to library */
-    const bookCardDiv = document.createElement('div');
-    document.querySelector('.book-cards').appendChild(bookCardDiv);
-
+    /* Hide book form */ 
+    document.getElementById("bookForm").style.display = "none";
     /* Create the book card and fill in information */
-    const bookCardTemplate = document.querySelector('.book-card');
-    const newBookCard = bookCardTemplate.textContent;
+    const bookCardTemplate = document.querySelector('.book-card-template');
+    const newBookCard = bookCardTemplate.cloneNode(true);
+    document.querySelector('.book-cards').appendChild(newBookCard);
+    newBookCard.style.display = "grid";
     newBookCard.querySelector('#bookTitle').innerHTML = this.title;
-    newBookCard.querySelector('#bookAuthor').innerHTML = this.author;
-    newBookCard.querySelector('#bookPages').innerHTML = this.pages;
+    newBookCard.querySelector('#bookAuthor').innerHTML = "by " + this.author;
+    newBookCard.querySelector('#bookPages').innerHTML = this.pages + " pages";
     newBookCard.querySelector('#bookRead').innerHTML = this.read;
 
     /* Add bookCard to the bookCardDiv */
     bookCardDiv.appendChild(newbookCard);
     myLibrary.push(this.Book);
-  }
-
-  displayBooks() {
-
   }
 
   removeBookFromLibrary() {
@@ -45,6 +41,19 @@ function toggleNewBookForm() {
   
 }
 
+/* Retrieve data from new book form and create a new Book upon clicking add book button*/
+function formSubmit(event) {
+  event.preventDefault();
+  var formtitle = document.getElementById("inputBookTitle").value;
+  var formauthor = document.getElementById("inputBookAuthor").value;
+  var formpages = document.getElementById("inputBookPages").value;
+  var formread = document.getElementById("inputBookRead").value;
+
+  const newBook = new Book(formtitle, formauthor, formpages, formread);
+  newBook.createBookCard();
+
+}
+
 /* 
 
 Event Listeners 
@@ -52,9 +61,11 @@ Event Listeners
 */
 
 /* Toggle book form visibility */
-const createBook = document.getElementById("addBook");
-createBook.addEventListener("click", toggleNewBookForm);
+const addBook = document.getElementById("addBook");
+addBook.addEventListener("click", toggleNewBookForm);
 
-/* Create a new Book upon clicking button */
-const newBook = document.getElementById("createBook");
-newBook.addEventListener("click", createBookCard());
+/* Create new book card */
+const createBook = document.getElementById("createBook");
+createBook.addEventListener("click", formSubmit);
+
+
