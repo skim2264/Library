@@ -7,22 +7,25 @@ class Book {
     this.pages = pages;
     this.read = read;
     }
-
   createBookCard() {
     /* Hide book form */ 
     document.getElementById("bookForm").style.display = "none";
     /* Create the book card and fill in information */
     const bookCardTemplate = document.querySelector('.book-card-template');
     const newBookCard = bookCardTemplate.cloneNode(true);
+
     document.querySelector('.book-cards').appendChild(newBookCard);
     newBookCard.style.display = "grid";
     newBookCard.querySelector('#bookTitle').innerHTML = this.title;
     newBookCard.querySelector('#bookAuthor').innerHTML = "by " + this.author;
     newBookCard.querySelector('#bookPages').innerHTML = this.pages + " pages";
-    newBookCard.querySelector('#bookRead').innerHTML = this.read;
+
+    if (this.read) {
+      var readIcon = newBookCard.querySelector('.icon-btns .readImg');
+      readIcon.classList.add('filter-read');
+    }
 
     /* Add bookCard to the bookCardDiv */
-    bookCardDiv.appendChild(newbookCard);
     myLibrary.push(this.Book);
   }
 
@@ -30,10 +33,11 @@ class Book {
 
   }
 
-  toggleRead() {
-
-  }
 }
+/* Toggle book's read status */
+function toggleRead(e) {
+    e.target.classList.toggle('filter-read');
+  }
 
 /* Make book form visible */
 function toggleNewBookForm() {
@@ -47,12 +51,20 @@ function formSubmit(event) {
   var formtitle = document.getElementById("inputBookTitle").value;
   var formauthor = document.getElementById("inputBookAuthor").value;
   var formpages = document.getElementById("inputBookPages").value;
-  var formread = document.getElementById("inputBookRead").value;
+  var formread = document.getElementById("inputBookRead").checked;
 
   const newBook = new Book(formtitle, formauthor, formpages, formread);
   newBook.createBookCard();
 
+  /* Clear form */
+  document.getElementById("inputBookTitle").value = "";
+  document.getElementById("inputBookAuthor").value = "";
+  document.getElementById("inputBookPages").value = "";
+  document.getElementById("inputBookRead").checked = false;
+
 }
+
+/* Delete book card */
 
 /* 
 
@@ -68,4 +80,15 @@ addBook.addEventListener("click", toggleNewBookForm);
 const createBook = document.getElementById("createBook");
 createBook.addEventListener("click", formSubmit);
 
-
+/* Toggle book's read status on click of icon */
+var readIcons = document.querySelectorAll('.readImg');
+readIcons.forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      if (e.target.tagName == "BUTTON") {
+        e.target.classList.toggle('filter-read');
+      }
+      else if (e.target.tagName = "IMG") {
+        e.target.parentElement.classList.toggle('filter-read');
+      }
+    });
+});

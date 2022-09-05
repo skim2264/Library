@@ -46,6 +46,10 @@
   width: 35px;
 }
 
+.filter-read {
+  filter: invert(84%) sepia(32%) saturate(6600%) hue-rotate(78deg) brightness(103%) contrast(92%);
+}
+
 /* Formatting of book form */
 #bookForm {
   display: none;
