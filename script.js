@@ -82,7 +82,17 @@ createBook.addEventListener("click", formSubmit);
 
 /* Toggle book's read status on click of icon */
 var readIcons = document.querySelectorAll('.readImg');
-readIcons.forEach((icon) => {
+document.addEventListener('click', function(e){
+  if (e.target.classList.contains("readImg")|| e.target.parentElement.classList.contains("readImg")) {
+    if (e.target.tagName == "BUTTON") {
+      e.target.classList.toggle('filter-read');
+    }
+    else if (e.target.tagName = "IMG") {
+      e.target.parentElement.classList.toggle('filter-read');
+    }
+  }
+})
+/* readIcons.forEach((icon) => {
     icon.addEventListener("click", (e) => {
       if (e.target.tagName == "BUTTON") {
         e.target.classList.toggle('filter-read');
@@ -91,4 +101,4 @@ readIcons.forEach((icon) => {
         e.target.parentElement.classList.toggle('filter-read');
       }
     });
-});
+}); */
