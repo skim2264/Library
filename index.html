@@ -17,16 +17,7 @@
 
     <!-- Library Section -->
     <div class="book-cards">
-      <div class="book-card-template">
-        <div class="icon-btns">
-          <button class="icon-btn binImg"><img src="images/bin.svg"></button>
-          <button class="icon-btn readImg"><img src="images/read.svg"></button>
-        </div>
-        
-        <h2 id="bookTitle">Harry Potter</h2>
-        <p id="bookAuthor">by J.K. Rowling</p>
-        <p id="bookPages">567 Pages</p>
-      </div>
+      
     </div>
 
     <div class="addBookBtn">
@@ -35,30 +26,32 @@
     
   </div>
 
-<!-- Template for book card
+  <!-- Template for book card -->
   <div class="book-card-template">
-    <h2 id="bookTitle">Title</h2>
-    <p id="bookAuthor">Author</p>
-    <p id="bookPages">Pages</p>
-    <p id="bookRead">Read</p>
-    <button type="button">Toggle Read Status</button>
-    <button type="button">Remove Book</button>
-  </div> -->
+    <div class="icon-btns">
+      <button class="icon-btn binImg"><img src="images/bin.svg"></button>
+      <button class="icon-btn readImg"><img src="images/read.svg"></button>
+    </div>
+    
+    <h2 id="bookTitle"></h2>
+    <p id="bookAuthor"></p>
+    <p id="bookPages"></p>
+  </div>
 
   <!--Input form for new Books-->
   <div class="book-form" id="bookForm">
-    <form action="" class="form">
+    <form action="" class="form" method="POST">
       <label for="inputBookTitle">Title</label>
-      <input type="text" id="inputBookTitle" name="inputBookTitle">
+      <input type="text" id="inputBookTitle" name="inputBookTitle" required/>
 
       <label for="inputBookAuthor">Author</label>
-      <input type="text" id="inputBookAuthor" name="inputBookAuthor">
+      <input type="text" id="inputBookAuthor" name="inputBookAuthor" required/>
 
       <label for="inputBookPages">Pages</label>
-      <input type="number" id="inputBookPages" name="inputBookPages">
+      <input type="number" id="inputBookPages" name="inputBookPages" required/>
 
       <label for="inputBookRead">Read</label>
-      <input type="checkbox" id="inputBookRead" name="inputBookRead" value="Read">
+      <input type="checkbox" id="inputBookRead" name="inputBookRead" value="Read"/>
 
       <button type="submit" id="createBook">Add Book</button>
     </form>

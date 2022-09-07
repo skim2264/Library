@@ -14,7 +14,7 @@
 
 /* Formating of book cards */
 .book-card-template {
-  display: grid;
+  display: none;
   width: 30vw;
   background-color: #DEB6AB;
   border-radius: 10px;

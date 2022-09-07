@@ -13,6 +13,7 @@ class Book {
     /* Create the book card and fill in information */
     const bookCardTemplate = document.querySelector('.book-card-template');
     const newBookCard = bookCardTemplate.cloneNode(true);
+    newBookCard.style.display = "grid";
 
     document.querySelector('.book-cards').appendChild(newBookCard);
     newBookCard.style.display = "grid";
@@ -20,17 +21,15 @@ class Book {
     newBookCard.querySelector('#bookAuthor').innerHTML = "by " + this.author;
     newBookCard.querySelector('#bookPages').innerHTML = this.pages + " pages";
 
+    var readIcon = newBookCard.querySelector('.icon-btns .readImg');
     if (this.read) {
-      var readIcon = newBookCard.querySelector('.icon-btns .readImg');
       readIcon.classList.add('filter-read');
+    } else {
+      readIcon.classList.remove('filter-read');
     }
 
     /* Add bookCard to the bookCardDiv */
     myLibrary.push(this.Book);
-  }
-
-  removeBookFromLibrary() {
-
   }
 
 }
@@ -64,7 +63,6 @@ function formSubmit(event) {
 
 }
 
-/* Delete book card */
 
 /* 
 
@@ -77,8 +75,8 @@ const addBook = document.getElementById("addBook");
 addBook.addEventListener("click", toggleNewBookForm);
 
 /* Create new book card */
-const createBook = document.getElementById("createBook");
-createBook.addEventListener("click", formSubmit);
+const createBook = document.getElementById("bookForm");
+createBook.onsubmit = formSubmit;
 
 /* Toggle book's read status on click of icon */
 document.addEventListener('click', function(e){
