@@ -42,13 +42,13 @@
   <div class="book-form" id="bookForm">
     <form action="" class="form" method="POST">
       <label for="inputBookTitle">Title</label>
-      <input type="text" id="inputBookTitle" name="inputBookTitle" required/>
+      <input type="text" id="inputBookTitle" name="inputBookTitle" required minlength="1" maxlength="40"/>
 
       <label for="inputBookAuthor">Author</label>
-      <input type="text" id="inputBookAuthor" name="inputBookAuthor" required/>
+      <input type="text" id="inputBookAuthor" name="inputBookAuthor" required minlength="2" maxlength="25"/>
 
       <label for="inputBookPages">Pages</label>
-      <input type="number" id="inputBookPages" name="inputBookPages" required/>
+      <input type="number" id="inputBookPages" name="inputBookPages" required min="1"/>
 
       <label for="inputBookRead">Read</label>
       <input type="checkbox" id="inputBookRead" name="inputBookRead" value="Read"/>
