@@ -39,9 +39,13 @@ function toggleRead(e) {
   }
 
 /* Make book form visible */
-function toggleNewBookForm() {
+function showNewBookForm() {
   document.getElementById("bookForm").style.display = "flex";
-  
+}
+
+/* Make book form invisible */
+function hideNewBookForm() {
+  document.getElementById("bookForm").style.display = "none";
 }
 
 /* Retrieve data from new book form and create a new Book upon clicking add book button*/
@@ -72,7 +76,11 @@ Event Listeners
 
 /* Toggle book form visibility */
 const addBook = document.getElementById("addBook");
-addBook.addEventListener("click", toggleNewBookForm);
+addBook.addEventListener("click", showNewBookForm);
+
+/* Close book form on click of x button */
+const closeFormButton = document.getElementById("closeFormButton");
+closeFormButton.addEventListener("click", hideNewBookForm);
 
 /* Create new book card */
 const createBook = document.getElementById("bookForm");
